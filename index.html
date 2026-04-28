@@ -43,12 +43,12 @@ Select ONE Additional Feature to Add
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        📖 What instrument do I play?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Piano</option>
+          <option value="book2">Violin</option>
+          <option value="book3">Clarinet</option>
+          <option value="book4">Harp</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -63,15 +63,21 @@ Select ONE Additional Feature to Add
       $("#movie-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
+        if (answer === "book1") {
+          $("#movie-text").text("YES!");
         } 
-        else {
-          $("#movie-text").text("Try Again!");
-        }
+        if (answer === "book2") {
+          $("#movie-text").text("Sort of...");
+        } 
+         if (answer === "book3") {
+          $("#movie-text").text("Try again!");
+        } 
+         if (answer === "book4") {
+          $("#movie-text").text("Try again!");
+        } 
       });
 
       //=======================Book Question jQuery Code
