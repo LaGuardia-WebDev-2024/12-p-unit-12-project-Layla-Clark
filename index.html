@@ -1,6 +1,6 @@
 <!-- Unit 12 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
+[ x ] Two Interactive Drop-down Inputs 
 [  ] Standard Animation
 [  ] Custom Animation
 [  ] Include Three Images
@@ -26,12 +26,12 @@ Select ONE Additional Feature to Add
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        🎥 What instrument do I play?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Piano</option>
+          <option value="movie2">Violin</option>
+          <option value="movie3">Clarinet</option>
+          <option value="movie4">Harp</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
@@ -43,12 +43,12 @@ Select ONE Additional Feature to Add
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What instrument do I play?
+        📖 What borough do I live in?
         <select id="book-answer">
-          <option value="book1">Piano</option>
-          <option value="book2">Violin</option>
-          <option value="book3">Clarinet</option>
-          <option value="book4">Harp</option>
+          <option value="book1">Manhattan</option>
+          <option value="book2">Queens</option>
+          <option value="book3">Brooklyn</option>
+          <option value="book4">Bronx</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -63,22 +63,28 @@ Select ONE Additional Feature to Add
       $("#movie-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+$("#movie-result").hide()
+
+
+        var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
+        if (answer === "movie1") {
           $("#movie-text").text("YES!");
         } 
-        if (answer === "book2") {
+        if (answer === "movie2") {
           $("#movie-text").text("Sort of...");
         } 
-         if (answer === "book3") {
+         if (answer === "movie3") {
           $("#movie-text").text("Try again!");
         } 
-         if (answer === "book4") {
+         if (answer === "movie4") {
           $("#movie-text").text("Try again!");
         } 
+        $("#movie-result").show(2000)
       });
+
+
 
       //=======================Book Question jQuery Code
       $("#book-form").on("submit", function (event) {
@@ -87,8 +93,8 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
+        if (answer === "book3") {
+          $("#book-text").text("Yes!");
         } 
         else {
           $("#book-text").text("Try Again!");
