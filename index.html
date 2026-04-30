@@ -2,7 +2,7 @@
 Requirements
 [ x ] Two Interactive Drop-down Inputs 
 [ x ] Standard Animation
-[  ] Custom Animation
+[ x ] Custom Animation
 [  ] Include Three Images
 
 Select ONE Additional Feature to Add  
@@ -53,11 +53,13 @@ Select ONE Additional Feature to Add
       </label>
       <button type="submit">Check Book Answer</button>
     </form>
-    <div id="book-result">
+    <div class="bookresult" id="book-result">
       <p id="book-text"></p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+      
+
       
       //========================Movie Question jQuery Code
       $("#movie-form").on("submit", function (event) {
@@ -90,6 +92,16 @@ $("#movie-result").hide()
       $("#book-form").on("submit", function (event) {
         event.preventDefault();
 
+
+
+
+
+          $("#book-result").animate({
+    width: "100%",
+    marginLeft: "10px",
+    borderWidth: "3px"
+  }, 2000);
+
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
@@ -99,7 +111,27 @@ $("#movie-result").hide()
         else {
           $("#book-text").text("Try Again!");
         }
-      });
+
+          $("#book-result").animate({
+    width: "400px",
+    marginLeft: "10px",
+    borderWidth: "30px"
+  }, 2000);
+
+
+  });
+
+
+// $("#book-result").click(function(){
+
+//   $(".bookresult").animate({
+//     width: "400px",
+//     marginLeft: "10px",
+//     borderWidth: "3px"
+//   }, 2000);
+// };
+
+    
       
     </script>
   </body>
