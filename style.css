@@ -20,3 +20,8 @@ hr {
   height: 5px;
   background-color: black;
 }
+
+.middle{
+  display:flex;
+  justify-content: center;
+}

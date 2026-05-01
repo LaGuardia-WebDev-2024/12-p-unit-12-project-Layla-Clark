@@ -3,7 +3,7 @@ Requirements
 [ x ] Two Interactive Drop-down Inputs 
 [ x ] Standard Animation
 [ x ] Custom Animation
-[  ] Include Three Images
+[ x ] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
@@ -22,11 +22,16 @@ Select ONE Additional Feature to Add
   </head>
   <body>
     <h1>Quiz About [Me]</h1>
+    <div class="middle">
+    <img src="https://t4.ftcdn.net/jpg/04/01/06/03/360_F_401060322_8U5v1tXmOdsugdCdgJHcp8lSOg6tUzVT.jpg" width="200">
+    <img src="https://www.straightupart.com/wp-content/uploads/2020/06/new-york-skyline-canvas-blue-white-background-cityscape-watercolor-box-canvas-print-canvas-art-gift-wall-decoration-5ee27b29-scaled.jpg" width="200">
+    <img src="https://img.freepik.com/premium-photo/cartoon-girl-with-curly-hair-white-shirt-standing-front-white-background-generative-ai_733139-91000.jpg" width="200"> </div>
     <hr />
+
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What instrument do I play?
+        🎵 What instrument do I play?
         <select id="movie-answer">
           <option value="movie1">Piano</option>
           <option value="movie2">Violin</option>
@@ -56,6 +61,23 @@ Select ONE Additional Feature to Add
     <div class="bookresult" id="book-result">
       <p id="book-text"></p>
     </div>
+      <!-- Movie Question -->
+    <form id="me-form">
+      <label>
+        🎵 What is my favorite color?
+        <select id="me-answer">
+          <option value="me1">Piano</option>
+          <option value="me2">Violin</option>
+          <option value="me3">Clarinet</option>
+          <option value="me4">Harp</option>
+        </select>
+      </label>
+      <button type="submit">Check Movie Answer</button>
+    </form>
+    <div id="movie-result">
+      <p id="movie-text"></p>
+    </div>
+    <hr />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
@@ -75,7 +97,7 @@ $("#movie-result").hide()
           $("#movie-text").text("YES!");
         } 
         if (answer === "movie2") {
-          $("#movie-text").text("Sort of...");
+          $("#movie-text").text("Sort of...but this is still not the right answer. Try again!");
         } 
          if (answer === "movie3") {
           $("#movie-text").text("Try again!");
