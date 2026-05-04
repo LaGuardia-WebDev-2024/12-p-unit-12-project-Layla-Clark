@@ -72,10 +72,10 @@ Select ONE Additional Feature to Add
           <option value="me4">Red</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Color Answer</button>
     </form>
-    <div id="movie-result">
-      <p id="movie-text"></p>
+    <div id="me-result">
+      <p id="me-text"></p>
     </div>
     <hr />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -108,6 +108,29 @@ $("#movie-result").hide()
         $("#movie-result").show(2000)
       });
 
+$("#me-form").on("submit", function (event) {
+        event.preventDefault();
+
+$("#me-result").hide()
+
+
+        var $answer = $("#me-answer");
+        var answer = $answer.val();
+
+        if (answer === "me1") {
+          $("#me-text").text("YES!");
+        } 
+        if (answer === "me2") {
+          $("#me-text").text("Not quite...");
+        } 
+         if (answer === "me3") {
+          $("#me-text").text("Try again!");
+        } 
+         if (answer === "me4") {
+          $("#me-text").text("This is my second favorite color. Try again!");
+        } 
+        $("#me-result").show(2000)
+      });
 
 
       //=======================Book Question jQuery Code
@@ -144,17 +167,6 @@ $("#movie-result").hide()
   });
 
 
-// $("#book-result").click(function(){
-
-//   $(".bookresult").animate({
-//     width: "400px",
-//     marginLeft: "10px",
-//     borderWidth: "3px"
-//   }, 2000);
-// };
-
-    
-      
     </script>
   </body>
 

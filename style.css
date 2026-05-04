@@ -25,3 +25,12 @@ hr {
   display:flex;
   justify-content: center;
 }
+  
+  #me-result {
+  background: rgb(255, 237, 159);
+  border: 5px solid black;
+  font-size: 24px;
+  min-height: 160px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
